@@ -39,4 +39,7 @@ int main(){
   
   printf("max0: %d max1: %d max2: %d\n", max0, max1, max2);
   printf("sum: %d\n", max0 + max1 + max2);
+
+  fclose(fin);
+  
 }
