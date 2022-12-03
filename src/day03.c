@@ -21,7 +21,7 @@ void p1()
       sack_size /= 2;
       
       // could do this in O(nlog(n)) with a sort of each part of the
-      // sack, but i'm lazy and O(n^2) is fine here.
+      // sack, but i'm lazy and O(n^2) is fine here. Or with a hashtable this O(n)...
       for (int i = 0; i < sack_size; ++i){
 	for (int j = sack_size ; j < 2*sack_size; ++j){
 	  if (c_string[i] == c_string[j]){
