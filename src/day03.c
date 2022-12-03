@@ -64,7 +64,7 @@ void p2()
 	sacks[i][sack_size[i]] = '\0';
       }
       
-      // same deal with sorting, now its O(n^3)...
+      // same deal with sorting and hashing, now its O(n^3)...
       for (int i = 0 ; i < sack_size[0] ; ++i){
 	for (int j = 0 ; j < sack_size[1] ; ++j){
 	  if (sacks[0][i] == sacks[1][j]){
