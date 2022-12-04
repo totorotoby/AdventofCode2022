@@ -20,7 +20,7 @@ int overlap_check(long* ranges)
 {
   // first upper needs to be greater than second lower, but cannot pass all the way through so
   // that second upper is less than first lower
-  if (ranges[1] >= ranges[2] && ranges[0] <= ranges[3]){
+  if (ranges[1] >= ranges[2] && ranges[0] <= ranges[3])
     return 1;
   return 0;
 }
