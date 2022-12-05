@@ -5,9 +5,6 @@ void p1p2()
 {
   FILE *fin = fopen("../inputs/day04", "r");
 
-  char* line = NULL;
-  size_t buff_size = 32;
-  size_t line_len;
   int total_contained = 0;
   int total_overlap = 0;
 
