@@ -30,7 +30,6 @@ void p1p2()
 
   int sub_len0 = 4;
   int sub_len1 = 14;
-  int idx = 0;
   int eq0 = 1;
   int eq1 = 1;
   int first0 = 0;
@@ -49,15 +48,10 @@ void p1p2()
       printf("len 14 first no repeats: %d\n", i + sub_len1);
       first1 = 1;
     }
-    
     front0++;
     front1++;
   }
-  
   fclose(fin);
-  
-  printf("%d\n", idx);
-  
 }
 
 int main(){
