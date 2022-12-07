@@ -15,7 +15,7 @@ int check_equal(char* front, int sub_len)
   return 0;
 }
 
-void p1()
+void p1p2()
 {
 
   FILE* fin = fopen("../inputs/day06", "r");
@@ -28,18 +28,30 @@ void p1()
   pack = (char*) malloc(sizeof(char) * length);
   fread(pack, sizeof(char), length, fin);
 
-  int sub_len = 14;
+  int sub_len0 = 4;
+  int sub_len1 = 14;
   int idx = 0;
-  int eq = 1;
-  char* front = pack + sub_len - 1;
+  int eq0 = 1;
+  int eq1 = 1;
+  int first0 = 0;
+  int first1 = 0;
+  char* front0 = pack + sub_len0 - 1;
+  char* front1 = pack + sub_len1 - 1;
   
-  for (int i = 0 ; i < length - sub_len; ++i){
-    eq = check_equal(front, sub_len);
-    if (eq == 0){
-      idx = i + sub_len;
-      break;
+  for (int i = 0 ; i < length - sub_len0; ++i){
+    eq0 = check_equal(front0, sub_len0);
+    eq1 = check_equal(front1, sub_len1);
+    if (eq0 == 0 && first0 == 0){
+      printf("len 4 first no repeats: %d\n", i + sub_len0);
+      first0 = 1;
     }
-    front++;
+    if (eq1 == 0 && first1 == 0){
+      printf("len 14 first no repeats: %d\n", i + sub_len1);
+      first1 = 1;
+    }
+    
+    front0++;
+    front1++;
   }
   
   fclose(fin);
@@ -48,19 +60,8 @@ void p1()
   
 }
 
-void p2()
-{
-
-  FILE *fin = fopen("../inputs/day<>", "r");
-
-  
-  fclose(fin);
-
-}
-
 int main(){
 
-  p1();
-  p2();
+  p1p2();
 
 }
