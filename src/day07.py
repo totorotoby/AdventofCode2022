@@ -1,4 +1,3 @@
-
 class node:
     
     name = ''
@@ -49,7 +48,7 @@ class node:
         if len(self.children) != 0:
             for child in self.children:
                 l = child.files_larger(thresh, l)
-
+                
         if self.total > thresh:
             l.append(self.total)
             
@@ -86,8 +85,7 @@ def p1():
 
     anwser = 0
     root.sum_totals()
-    anwser = root.get_anwser(anwser)
-    #print(anwser)
+    print(root.get_anwser(anwser))
 
     return root
 
@@ -96,12 +94,7 @@ def p2(root):
     sizes = root.sizes
     greater = []
     search = root.total - 30000000
-
-    greater = root.files_larger(search, greater)
-    print(greater)
-
-    
-
+    print(min(root.files_larger(search, greater)))
     
 root = p1()
 p2(root)
