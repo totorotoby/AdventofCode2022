@@ -6,4 +6,6 @@
 - [x] day04
 - [ ] day05
 - [x] day06
-- [ ] day07
+- [x] day07
+- [ ] day08
+- [ ] day09
