@@ -85,16 +85,16 @@ def p1():
 
     anwser = 0
     root.sum_totals()
-    print(root.get_anwser(anwser))
+    print("p1:", root.get_anwser(anwser))
 
     return root
 
 def p2(root):
 
-    sizes = root.sizes
     greater = []
-    search = root.total - 30000000
-    print(min(root.files_larger(search, greater)))
+    search = 30000000 - (70000000 - root.total)
+    
+    print("p2:", min(root.files_larger(search, greater)))
     
 root = p1()
 p2(root)
