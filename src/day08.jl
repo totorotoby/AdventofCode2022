@@ -8,8 +8,33 @@ let
        end
     end    
     
-   # find visable trees!
+   N = size(tree_array)[1]
+   hidden = Array{Bool, 2}(undef, N-2, N-2)
+  
+   # the horribly wasteful way of doing it
+   for i = 2:N-2
+       for j = 2:N-2
+           hidden[i-1, j-1] = false
+           tree_height = tree_array[i,j]
+            
+           # check column wrong needs work
+           for k = 1:N
+               if tree_array[k,j] > tree_height
+                   hidden[i-1,j-1] = true
+                   break
+               end
+            end
+           # check row wrong needs work
+           for k = 1:N
+               if tree_array[i,k] > tree_height
+                   hidden[i-1,j-1] = true
+               end 
+           end
+       end
+    end
+    
+    
+    display(hidden)
 
-   nothing
-
+    nothing
 end
